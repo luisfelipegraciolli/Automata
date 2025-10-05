@@ -1,5 +1,5 @@
-q={s1,s2}
+q={s1,s2,s3}
 sigma={a,b}
 q0=s1
-f={s1}
-delta={{s1, a, s2}, {s1, b, s1}, {s2, b, s1}}
+f={s3}
+delta={{s1, b, s1}, {s1, a, s2}, {s2, a, s2}, {s2, b, s3}, {s3, a, s3}, {s3, b, s3}}
