@@ -1,0 +1,5 @@
+q={s1,s2}
+sigma={a,b}
+q0=s1
+f={s1}
+delta={{s1, a, s2}, {s1, b, s1}, {s2, b, s1}}
