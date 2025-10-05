@@ -1,0 +1,11 @@
+## q == Estados
+## sigma == Alfabeto
+## q0 == Estado Inicial
+## f == Estados finais
+## delta == Tabela de transições
+
+q={s1,s2}
+sigma={a,b}
+q0=s1
+f={s1}
+delta={{s2, s1},{s1,s2}}
