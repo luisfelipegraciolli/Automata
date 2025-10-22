@@ -55,13 +55,6 @@ def ler_automato(file_name: str) -> Automato:
 
     return Automato(q, sigma, q0, f_estados, delta)
 
-def check_afd_cadeia(automato: Automato, cadeia: str) -> str:
-    """Executa a verificação e retorna mensagem legível."""
-    if automato.check_cadeia(cadeia):
-        return "✅ Cadeia Aceita"
-    else:
-        return "❌ Cadeia Inválida"
-
 def main():
     automatoAfd = ler_automato("automato.txt")
     alfabeto = automatoAfd.sigma
@@ -72,12 +65,16 @@ def main():
         cadeia = "abb"
         print("[WARN] Arquivo 'cadeia.txt' não encontrado — usando 'abb' para teste.")
 
-    print("\n[INFO] Cadeia a validar:", repr(cadeia), "\n")
+    print("\n[INFO] Cadeia a validar:", repr(cadeia))
 
-    if check_alfabeto(cadeia, alfabeto):
-        print(check_afd_cadeia(automatoAfd, cadeia))
-    else:
-        print("⚠️ Cadeia contém símbolos fora do alfabeto")
+    if not check_alfabeto(cadeia, alfabeto):
+        print("\n[RESULTADO]")
+        print("❌ Cadeia REJEITADA (Contém símbolos fora do alfabeto)")
+        return  # Termina o programa
+
+    # Chama a verificação
+    # A função check_cadeia agora sempre imprime o passo a passo e o resultado.
+    automatoAfd.check_cadeia(cadeia)
 
 if __name__ == "__main__":
     main()
