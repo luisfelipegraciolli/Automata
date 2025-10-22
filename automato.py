@@ -15,9 +15,8 @@ class Automato:
         estado_atual = self.q0
         
         print("\n[INFO] Iniciando verificação passo a passo:")
-        
-        cadeia_para_mostrar = cadeia if cadeia else "epsilon" 
-        print(f"  delta^({estado_atual}, \"{cadeia_para_mostrar}\")")
+        cadeia_para_mostrar = cadeia if cadeia else "ɛ" 
+        print(f"  δ^({estado_atual}, \"{cadeia_para_mostrar}\")")
 
         for i, simbolo in enumerate(cadeia):
             proximo_estado = None
@@ -38,9 +37,8 @@ class Automato:
             
             # Pega o restante da cadeia
             cadeia_restante = cadeia[i+1:]
-            # Se for vazia:
-            cadeia_para_mostrar = cadeia_restante if cadeia_restante else "epsilon"
-            print(f"  = delta^({estado_atual}, \"{cadeia_para_mostrar}\")")
+            cadeia_para_mostrar = cadeia_restante if cadeia_restante else "ɛ"
+            print(f"  = δ^({estado_atual}, \"{cadeia_para_mostrar}\")")
 
         # Verificação final
         is_final = estado_atual in self.f
